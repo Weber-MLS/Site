@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Krankenfahrdienst – Beispiel</title>
-  <meta name="description" content="Zuverlässige Krankenfahrten in Berlin & Umgebung. Sitzend, Tragestuhl, Rollstuhl.">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weber & MLS Fahrdienst GmbH – Service, der bewegt.</title>
+  <meta name="description" content="Weber & MLS Fahrdienst GmbH – Krankenfahrten sitzend, Rollstuhl und Tragestuhl. Service, der bewegt." />
+  <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
 
   <!-- Strukturierte Daten -->
@@ -13,329 +13,129 @@
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Beispiel Krankenfahrdienst",
-    "telephone": "+49 30 123456",
-    "email": "anfrage@example.de",
+    "name": "Weber & MLS Fahrdienst GmbH",
+    "slogan": "Service, der bewegt.",
+    "url": "https://example.de",
+    "email": "info@example.de",
+    "telephone": "+49 30 000000",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Musterstraße 1",
-      "postalCode": "10717",
-      "addressLocality": "Berlin",
-      "addressCountry": "DE"
+      "addressCountry": "DE",
+      "addressLocality": "Berlin"
     },
     "areaServed": "Berlin",
-    "openingHours": "Mo-So 00:00-24:00",
-    "url": "https://example.de",
-    "makesOffer": [
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Krankenfahrten sitzend"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Rollstuhlbeförderung"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Tragestuhl"}}
-    ]
+    "image": "assets/hero.jpg"
   }
   </script>
 </head>
 <body>
-  <!-- Topbar -->
-  <div class="topbar">
-    <div class="container wrap">
-      <div class="contact">
-        <span class="badge">24/7 erreichbar</span>
-        <span>☎︎ <a href="tel:+4930123456">030 123456</a></span>
-        <span>✉︎ <a href="mailto:anfrage@example.de">anfrage@example.de</a></span>
-      </div>
-      <div>DE</div>
-    </div>
-  </div>
-
-  <!-- Header / Navigation -->
-  <header class="site">
+  <!-- Header -->
+  <header class="site-header">
     <div class="container nav">
-      <div class="logo" aria-label="Logo Krankenfahrdienst">
-        <!-- Inline-Logo (SVG) -->
-        <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true">
-          <defs>
-            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#0ea5a6"/>
-              <stop offset="1" stop-color="#22d3ee"/>
-            </linearGradient>
-          </defs>
-          <rect x="4" y="4" width="56" height="56" rx="12" fill="url(#g)"/>
-          <path d="M18 34c0-6 5-11 11-11h6a11 11 0 0 1 0 22h-6" fill="none" stroke="#001b1b" stroke-width="4" stroke-linecap="round"/>
-          <circle cx="22" cy="34" r="3" fill="#001b1b"/>
-        </svg>
-        <span>Krankenfahrdienst</span>
-      </div>
+      <a href="#start" class="brand">
+        <img src="assets/logo.png" alt="Weber & MLS Fahrdienst GmbH" />
+        <span>Weber &amp; MLS</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">Menu</button>
       <nav>
-        <button class="mobile-toggle" id="menuToggle" aria-label="Menü öffnen">Menü</button>
         <ul id="navList">
-          <li><a href="#leistungen">Leistungen</a></li>
-          <li><a href="#ablauf">Ablauf</a></li>
-          <li><a href="#ueber-uns">Über uns</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-          <li><a class="button" href="#kontakt">Online anfragen</a></li>
+          <li><a href="#start">Startseite</a></li>
+          <li><a href="#about">Über uns</a></li>
+          <li><a href="#gallery">Galerie</a></li>
+          <li><a href="#contact">Kontakt</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="container grid">
-      <div>
-        <div class="card">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          <div><b>Schnell verfügbar</b><br><span class="muted">Heute noch Fahrt sichern – telefonisch oder online.</span></div>
-        </div>
-        <h1>Zuverlässige Krankenfahrten<br>in Berlin & Umgebung</h1>
-        <p class="lead">Sitzend, im Tragestuhl oder mit Rollstuhl – pünktlich, freundlich, versichert.</p>
-        <div class="ctas">
-          <a class="button" href="#kontakt">Online anfragen</a>
-          <a class="button secondary" href="tel:+4930123456">Jetzt anrufen</a>
-        </div>
-        <div class="kpis">
-          <div class="kpi"><b>10k+</b><span class="muted">Fahrten/Jahr</span></div>
-          <div class="kpi"><b>4.9★</b><span class="muted">Kundenzufriedenheit</span></div>
-          <div class="kpi"><b>&lt;10 min</b><span class="muted">Antwortzeit</span></div>
-          <div class="kpi"><b>ISO</b><span class="muted">Qualitätsmanagement</span></div>
-        </div>
-      </div>
-
-      <!-- Visual (inline SVG, keine externen Dateien nötig) -->
-      <div class="hero-visual" aria-hidden="true">
-        <svg viewBox="0 0 800 520" role="img" aria-label="Fahrzeugillustration">
-          <rect width="800" height="520" fill="url(#bg)"/>
-          <defs>
-            <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#0b1220"/>
-              <stop offset="1" stop-color="#081226"/>
-            </linearGradient>
-          </defs>
-          <g transform="translate(60,260)">
-            <rect x="0" y="-60" rx="16" ry="16" width="520" height="160" fill="#0ea5a6" opacity=".25" stroke="#22d3ee" stroke-opacity=".3"/>
-            <rect x="40" y="-100" rx="16" ry="16" width="240" height="120" fill="#0ea5a6" opacity=".35"/>
-            <circle cx="100" cy="100" r="36" fill="#0ea5a6"/><circle cx="100" cy="100" r="18" fill="#001b1b"/>
-            <circle cx="420" cy="100" r="36" fill="#0ea5a6"/><circle cx="420" cy="100" r="18" fill="#001b1b"/>
-          </g>
-          <text x="24" y="500" fill="#a5f3fc" font-size="18">Bild-Platzhalter</text>
-        </svg>
+  <section id="start" class="hero">
+    <div class="hero-media" aria-hidden="true">
+      <!-- Optionales Bild: assets/hero.jpg; sonst neutraler Platzhalter -->
+      <img src="assets/hero.jpg" alt="" onerror="this.closest('.hero-media').classList.add('ph'); this.remove();" />
+    </div>
+    <div class="container hero-content">
+      <h1>Weber &amp; MLS Fahrdienst GmbH</h1>
+      <p class="tagline">Service, der bewegt.</p>
+      <p class="sub">Sitzend · Rollstuhl · Tragestuhl – zuverlässig in Berlin &amp; Umgebung.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#contact">Jetzt Kontakt aufnehmen</a>
       </div>
     </div>
   </section>
 
-  <!-- Leistungen -->
-  <section id="leistungen">
+  <!-- About -->
+  <section id="about" class="section">
     <div class="container">
-      <div class="section-title">
-        <h2>Leistungen</h2>
-        <p class="muted">Medizinische Beförderung – sicher & diskret.</p>
+      <div class="section-head">
+        <h2>Über uns</h2>
+        <p class="muted">Diskret, pünktlich, sicher – mit geschultem Personal und barrierefreien Fahrzeugen.</p>
       </div>
-      <div class="cards">
-        <div class="card">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4a2 2 0 0 0-2 2v7h8a3 3 0 0 1 3 3v2h2v-2a5 5 0 0 0-5-5H9V6a2 2 0 0 0-2-2z" fill="currentColor"/></svg>
-          <h3>Sitzend</h3>
-          <p class="muted">Termine bei Ärzt:innen, Kliniken, Reha. Direkt- oder Sammelfahrt.</p>
-        </div>
-        <div class="card">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16a6 6 0 1 0 12 0 6 6 0 0 0-12 0zm5-9V3h2v4l4 6h-2l-3-4-1 2H8l3-6z" fill="currentColor"/></svg>
-          <h3>Rollstuhl</h3>
-          <p class="muted">Rollstuhlgerechte Fahrzeuge inkl. Rampe & Sicherungssystem.</p>
-        </div>
-        <div class="card">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h2v7h6V3h2v9H7zM6 14h12v2H6v-2zm0 3h12v2H6v-2z" fill="currentColor"/></svg>
-          <h3>Tragestuhl</h3>
-          <p class="muted">Schonende Treppenüberwindung mit Tragestuhl & geschultem Team.</p>
-        </div>
-        <div class="card">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 13l9 2 4 7 1-4 6 2-3-6 3-6-6 2-1-4-4 7-9 2z" fill="currentColor"/></svg>
-          <h3>Flughafentransfer</h3>
-          <p class="muted">Begleitservice bis zum Gate inkl. Gepäck- und Check-in-Hilfe.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Ablauf -->
-  <section id="ablauf">
-    <div class="container">
-      <div class="section-title">
-        <h2>Ablauf</h2>
-        <p class="muted">In drei Schritten zur Fahrt.</p>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <h3>1 · Anfrage</h3>
-          <p class="muted">Telefonisch oder online mit Datum, Uhrzeit, Abhol- & Zieladresse.</p>
-        </div>
-        <div class="step">
-          <h3>2 · Bestätigung</h3>
-          <p class="muted">Wir prüfen Verfügbarkeit, klären Formalitäten & Kostenträger.</p>
-        </div>
-        <div class="step">
-          <h3>3 · Fahrt</h3>
-          <p class="muted">Abholung pünktlich vor der Tür, bequeme Beförderung bis ins Ziel.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Über uns -->
-  <section id="ueber-uns">
-    <div class="container">
-      <div class="about">
-        <div>
-          <h2>Über uns</h2>
-          <p>Qualifizierter Krankenfahrdienst mit geschultem Personal und barrierefreien Fahrzeugen. Freundlich, respektvoll und zuverlässig – seit über 10 Jahren.</p>
-          <ul class="muted">
-            <li>• Geschultes Personal (Erste Hilfe, Hygienestandards)</li>
-            <li>• Zertifiziertes Qualitätsmanagement</li>
-            <li>• DSGVO-konforme Auftragsabwicklung</li>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Wir realisieren Krankenfahrten sitzend, im Rollstuhl oder Tragestuhl. Unser Team arbeitet respektvoll und effizient – vom ersten Anruf bis zur Ankunft am Ziel.</p>
+          <ul class="checks">
+            <li>Geschultes Personal (Erste Hilfe, Hygiene)</li>
+            <li>Rollstuhlgerechte Fahrzeuge mit Sicherungssystem</li>
+            <li>Termin- und Routenplanung nach Bedarf</li>
           </ul>
         </div>
-        <!-- Platzhalterbild (SVG) -->
-        <div class="about-visual" aria-hidden="true">
-          <svg viewBox="0 0 800 520">
-            <rect width="800" height="520" fill="#0b1220"/>
-            <rect x="24" y="24" width="752" height="472" rx="16" fill="#0ea5a6" opacity=".18" stroke="#22d3ee" stroke-opacity=".3"/>
-            <text x="40" y="280" fill="#a5f3fc" font-size="22">Team/Fahrzeug – Platzhalter</text>
-          </svg>
+        <div class="about-card">
+          <h3>Kernleistungen</h3>
+          <ul>
+            <li>Ambulante Termine &amp; Entlassfahrten</li>
+            <li>Reha- und Dialysefahrten</li>
+            <li>Langstrecken auf Anfrage</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Kundenstimmen -->
-  <section id="stimmen">
+  <!-- Gallery -->
+  <section id="gallery" class="section">
     <div class="container">
-      <div class="section-title">
-        <h2>Kundenstimmen</h2>
-        <p class="muted">Echte Rückmeldungen – auszugsweise.</p>
+      <div class="section-head">
+        <h2>Galerie</h2>
+        <p class="muted">Platzhalter – hier können Fahrzeug- &amp; Teamfotos rein.</p>
       </div>
-      <div class="testimonials">
-        <div class="quote">
-          <p>„Pünktlich, freundlich, hilfsbereit. Jederzeit wieder.“</p>
-          <div class="who muted">— M. Schneider</div>
-        </div>
-        <div class="quote">
-          <p>„Sichere Rollstuhlbeförderung, super Kommunikation.“</p>
-          <div class="who muted">— M. Ali</div>
-        </div>
-        <div class="quote">
-          <p>„Kurzfristig Termin bekommen, Danke an das Team!“</p>
-          <div class="who muted">— M. Müller</div>
-        </div>
+      <div class="grid gallery-grid">
+        <!-- Platzhalter-Kacheln (SVG/CSS). Ersetze jede <div class="tile"> durch <img src="..."> -->
+        <div class="tile" aria-label="Bild-Platzhalter"></div>
+        <div class="tile" aria-label="Bild-Platzhalter"></div>
+        <div class="tile" aria-label="Bild-Platzhalter"></div>
+        <div class="tile" aria-label="Bild-Platzhalter"></div>
+        <div class="tile" aria-label="Bild-Platzhalter"></div>
+        <div class="tile" aria-label="Bild-Platzhalter"></div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq">
+  <!-- Contact -->
+  <section id="contact" class="section">
     <div class="container">
-      <div class="section-title"><h2>FAQ</h2><p class="muted">Häufige Fragen kurz erklärt.</p></div>
-      <div class="faq">
-        <div class="item">
-          <div class="q" role="button" aria-expanded="false">Wer übernimmt die Kosten? <span>+</span></div>
-          <div class="a">Je nach Indikation Krankenkasse, Unfallkasse oder privat. Wir beraten.</div>
+      <div class="section-head">
+        <h2>Kontakt</h2>
+        <p class="muted">Wir melden uns schnellstmöglich.</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-row">
+          <span>Telefon</span>
+          <a href="tel:+4930000000" class="contact-link">+49 30 000000</a>
         </div>
-        <div class="item">
-          <div class="q" role="button" aria-expanded="false">Welche Unterlagen benötige ich? <span>+</span></div>
-          <div class="a">Ärztliche Verordnung (falls vorhanden), Versichertenkarte, Ausweis.</div>
+        <div class="contact-row">
+          <span>E-Mail</span>
+          <a href="mailto:info@example.de" class="contact-link">info@example.de</a>
         </div>
-        <div class="item">
-          <div class="q" role="button" aria-expanded="false">Fahrt außerhalb von Berlin? <span>+</span></div>
-          <div class="a">Ja, auf Anfrage auch deutschlandweit – mit Pauschalangebot.</div>
-        </div>
+        <p class="hint">Ersetze die Platzhalter durch eure echten Daten.</p>
       </div>
     </div>
   </section>
 
-  <!-- Kontakt -->
-  <section id="kontakt">
-    <div class="container">
-      <div class="section-title">
-        <h2>Kontakt & Online-Anfrage</h2>
-        <p class="muted">Wir antworten meist in unter 10 Minuten.</p>
-      </div>
-      <form class="form" id="contactForm" novalidate>
-        <div>
-          <label for="name">Name</label>
-          <input id="name" name="name" required class="focus-ring" placeholder="Vor- und Nachname">
-        </div>
-        <div>
-          <label for="phone">Telefon</label>
-          <input id="phone" name="phone" required class="focus-ring" placeholder="+49 ...">
-        </div>
-        <div>
-          <label for="date">Datum</label>
-          <input id="date" type="date" name="date" required class="focus-ring">
-        </div>
-        <div>
-          <label for="time">Uhrzeit</label>
-          <input id="time" type="time" name="time" required class="focus-ring">
-        </div>
-        <div>
-          <label for="from">Abholung</label>
-          <input id="from" name="from" required class="focus-ring" placeholder="Straße, Nr., PLZ Ort">
-        </div>
-        <div>
-          <label for="to">Ziel</label>
-          <input id="to" name="to" required class="focus-ring" placeholder="Klinik / Praxis / Adresse">
-        </div>
-        <div>
-          <label for="service">Leistung</label>
-          <select id="service" name="service" class="focus-ring">
-            <option>Sitzend</option>
-            <option>Rollstuhl</option>
-            <option>Tragestuhl</option>
-            <option>Flughafentransfer</option>
-          </select>
-        </div>
-        <div>
-          <label for="email">E-Mail</label>
-          <input id="email" name="email" type="email" class="focus-ring" placeholder="name@example.de">
-        </div>
-        <textarea id="message" name="message" placeholder="Notizen (optional)"></textarea>
-        <div class="actions">
-          <button class="button" type="submit">Anfrage senden</button>
-          <span class="notice">Mit Klick stimmen Sie der Verarbeitung gemäß <a href="#">Datenschutz</a> zu.</span>
-        </div>
-      </form>
-      <p class="notice">Hinweis: Formular ist clientseitig. Für Live-Betrieb Maildienst/API anbinden.</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <h4>Krankenfahrdienst</h4>
-        <p>Pfalzburger Straße 43–44 · 10717 Berlin<br>Tel. 030 123456 · anfrage@example.de</p>
-      </div>
-      <div>
-        <h4>Recht</h4>
-        <ul>
-          <li><a href="#">Impressum</a></li>
-          <li><a href="#">Datenschutz</a></li>
-          <li><a href="#">AGB</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Leistungen</h4>
-        <ul>
-          <li><a href="#leistungen">Sitzend</a></li>
-          <li><a href="#leistungen">Rollstuhl</a></li>
-          <li><a href="#leistungen">Tragestuhl</a></li>
-          <li><a href="#leistungen">Flughafen</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Kontakt</h4>
-        <ul>
-          <li><a href="#kontakt">Online-Anfrage</a></li>
-          <li><a href="tel:+4930123456">030 123456</a></li>
-          <li><a href="mailto:anfrage@example.de">anfrage@example.de</a></li>
-        </ul>
-      </div>
+  <footer class="site-footer">
+    <div class="container foot">
+      <p>© <span id="year"></span> Weber &amp; MLS Fahrdienst GmbH</p>
+      <p><a href="#">Impressum</a> · <a href="#">Datenschutz</a></p>
     </div>
   </footer>
 </body>
