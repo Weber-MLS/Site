@@ -41,7 +41,7 @@
         <ul id="navList">
           <li><a href="#start">Startseite</a></li>
           <li><a href="#about">Über uns</a></li>
-          <li><a href="#gallery">Galerie</a></li>
+          <!-- Galerie-Link entfernt -->
           <li><a href="#contact">Kontakt</a></li>
         </ul>
       </nav>
@@ -51,13 +51,16 @@
   <!-- Hero -->
   <section id="start" class="hero">
     <div class="hero-media" aria-hidden="true">
-      <!-- Optionales Bild: assets/hero.jpg; sonst neutraler Platzhalter -->
-      <img src="assets/hero.jpg" alt="" onerror="this.closest('.hero-media').classList.add('ph'); this.remove();" />
+      <!-- Video füllt den Bereich ohne Ränder -->
+      <video src="images/video1" autoplay muted loop playsinline></video>
     </div>
     <div class="container hero-content">
-      <h1>Weber &amp; MLS Fahrdienst GmbH</h1>
+      <div class="hero-row">
+        <img class="hero-logo" src="images/bild1" alt="Bildmarke" />
+        <h1>Weber &amp; MLS Fahrdienst GmbH</h1>
+      </div>
       <p class="tagline">Service, der bewegt.</p>
-      <p class="sub">Sitzend · Rollstuhl · Tragestuhl – zuverlässig in Berlin &amp; Umgebung.</p>
+      <!-- Info-Zeile entfernt: Sitzend · Rollstuhl · Tragestuhl – zuverlässig in Berlin & Umgebung. -->
       <div class="hero-cta">
         <a class="btn" href="#contact">Jetzt Kontakt aufnehmen</a>
       </div>
@@ -92,24 +95,7 @@
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section id="gallery" class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Galerie</h2>
-        <p class="muted">Platzhalter – hier können Fahrzeug- &amp; Teamfotos rein.</p>
-      </div>
-      <div class="grid gallery-grid">
-        <!-- Platzhalter-Kacheln (SVG/CSS). Ersetze jede <div class="tile"> durch <img src="..."> -->
-        <div class="tile" aria-label="Bild-Platzhalter"></div>
-        <div class="tile" aria-label="Bild-Platzhalter"></div>
-        <div class="tile" aria-label="Bild-Platzhalter"></div>
-        <div class="tile" aria-label="Bild-Platzhalter"></div>
-        <div class="tile" aria-label="Bild-Platzhalter"></div>
-        <div class="tile" aria-label="Bild-Platzhalter"></div>
-      </div>
-    </div>
-  </section>
+  <!-- Galerie-Bereich komplett entfernt -->
 
   <!-- Contact -->
   <section id="contact" class="section">
