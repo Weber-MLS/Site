@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Weber & MLS Fahrdienst GmbH – Service, der bewegt.</title>
-  <meta name="description" content="Weber & MLS Fahrdienst GmbH – Krankenfahrten sitzend, Rollstuhl und Tragestuhl. Service, der bewegt." />
+  <title>Weber & MLS Fahrdienst GmbH</title>
+  <meta name="description" content="Weber & MLS Fahrdienst GmbH – Krankenfahrten sitzend, Rollstuhl und Tragestuhl." />
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
 
@@ -14,7 +14,6 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Weber & MLS Fahrdienst GmbH",
-    "slogan": "Service, der bewegt.",
     "url": "https://example.de",
     "email": "info@example.de",
     "telephone": "+49 30 000000",
@@ -41,7 +40,6 @@
         <ul id="navList">
           <li><a href="#start">Startseite</a></li>
           <li><a href="#about">Über uns</a></li>
-          <!-- Galerie-Link entfernt -->
           <li><a href="#contact">Kontakt</a></li>
         </ul>
       </nav>
@@ -51,16 +49,15 @@
   <!-- Hero -->
   <section id="start" class="hero">
     <div class="hero-media" aria-hidden="true">
-      <!-- Video füllt den Bereich ohne Ränder -->
-      <video src="images/video1" autoplay muted loop playsinline></video>
+      <!-- Video mit Poster -->
+      <video src="Images/video1.mp4" autoplay muted loop playsinline poster="Images/Bild1.jpg"></video>
     </div>
     <div class="container hero-content">
       <div class="hero-row">
-        <img class="hero-logo" src="images/bild1" alt="Bildmarke" />
-        <h1>Weber &amp; MLS Fahrdienst GmbH</h1>
+        <!-- Bild links -->
+        <img class="hero-logo" src="Images/Bild1.jpg" alt="Bildmarke" />
       </div>
-      <p class="tagline">Service, der bewegt.</p>
-      <!-- Info-Zeile entfernt: Sitzend · Rollstuhl · Tragestuhl – zuverlässig in Berlin & Umgebung. -->
+      <!-- Überschrift & Slogan entfernt -->
       <div class="hero-cta">
         <a class="btn" href="#contact">Jetzt Kontakt aufnehmen</a>
       </div>
@@ -94,8 +91,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Galerie-Bereich komplett entfernt -->
 
   <!-- Contact -->
   <section id="contact" class="section">
