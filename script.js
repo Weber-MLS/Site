@@ -16,12 +16,10 @@ const agbModal = document.getElementById('agbModal');
 const closeAgb = document.getElementById('closeAgb');
 
 function showAgb() {
-  if (!agbModal) return;
   agbModal.classList.add('show');
   agbModal.setAttribute('aria-hidden', 'false');
 }
 function hideAgb() {
-  if (!agbModal) return;
   agbModal.classList.remove('show');
   agbModal.setAttribute('aria-hidden', 'true');
 }
@@ -29,9 +27,5 @@ function hideAgb() {
 openAgb?.addEventListener('click', showAgb);
 footerAgbLink?.addEventListener('click', (e) => { e.preventDefault(); showAgb(); });
 closeAgb?.addEventListener('click', hideAgb);
-agbModal?.addEventListener('click', (e) => {
-  if (e.target?.hasAttribute?.('data-close')) hideAgb();
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') hideAgb();
-});
+agbModal?.addEventListener('click', (e) => { if (e.target?.hasAttribute?.('data-close')) hideAgb(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideAgb(); });
