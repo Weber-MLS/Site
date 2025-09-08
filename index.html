@@ -102,42 +102,56 @@
   </section>
 
   <!-- Kontaktformular -->
-  <section id="kontaktformular" class="section form-section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Kontaktformular</h2>
-        <p class="muted">Senden Sie uns Ihre Anfrage – wir melden uns zeitnah.</p>
+<section id="kontaktformular" class="section form-section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Kontaktformular</h2>
+      <p class="muted">Senden Sie uns Ihre Anfrage – wir melden uns zeitnah.</p>
+    </div>
+
+    <form class="contact-form" 
+          action="https://formsubmit.co/fahrdienst@weber-mls.de" 
+          method="POST">
+      
+      <!-- Anti-Spam Honeypot -->
+      <input type="text" name="_honey" style="display:none">
+      <!-- Bot-Schutz deaktivieren -->
+      <input type="hidden" name="_captcha" value="false">
+      <!-- Nach dem Absenden zurück auf deine Seite -->
+      <input type="hidden" name="_next" value="https://deine-domain.de/#kontaktformular">
+      <!-- Betreff in der E-Mail -->
+      <input type="hidden" name="_subject" value="Neue Anfrage über das Kontaktformular">
+
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="name">Ihr Name</label>
+          <input type="text" id="name" name="name" placeholder="Max Mustermann" required>
+        </div>
+        <div class="form-field">
+          <label for="phone">Telefon</label>
+          <input type="tel" id="phone" name="phone" placeholder="0151 19138505">
+        </div>
+        <div class="form-field">
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" name="email" placeholder="name@mail.de" required>
+        </div>
+        <div class="form-field">
+          <label for="date">Wunschtermin</label>
+          <input type="date" id="date" name="date">
+        </div>
+        <div class="form-field form-full">
+          <label for="message">Ihre Nachricht</label>
+          <textarea id="message" name="message" rows="5" placeholder="Start/Ziel, Datum, besondere Hinweise …" required></textarea>
+        </div>
       </div>
 
-      <form class="contact-form" action="#" method="post" novalidate>
-        <div class="form-grid">
-          <div class="form-field">
-            <label for="name">Ihr Name</label>
-            <input type="text" id="name" name="name" placeholder="Max Mustermann" required>
-          </div>
-          <div class="form-field">
-            <label for="phone">Telefon</label>
-            <input type="tel" id="phone" name="phone" placeholder="0151 19138505">
-          </div>
-          <div class="form-field">
-            <label for="email">E-Mail</label>
-            <input type="email" id="email" name="email" placeholder="name@mail.de" required>
-          </div>
-          <div class="form-field">
-            <label for="date">Wunschtermin</label>
-            <input type="date" id="date" name="date">
-          </div>
-          <div class="form-field form-full">
-            <label for="message">Ihre Nachricht</label>
-            <textarea id="message" name="message" rows="5" placeholder="Start/Ziel, Datum, besondere Hinweise …" required></textarea>
-          </div>
-        </div>
-        <div class="form-actions">
-          <button type="submit" class="btn">Anfrage senden</button>
-        </div>
-      </form>
-    </div>
-  </section>
+      <div class="form-actions">
+        <button type="submit" class="btn">Anfrage senden</button>
+      </div>
+    </form>
+  </div>
+</section>
+
 
   <!-- AGB Button -->
   <section class="section agb-cta">
