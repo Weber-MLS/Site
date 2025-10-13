@@ -19,7 +19,7 @@ body {
   background:var(--bg);
   line-height:1.5;
 }
-img { max-width:100%;height:auto;display:block }
+img, video { max-width:100%;height:auto;display:block }
 
 .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
 .section{padding:72px 0}
@@ -57,14 +57,71 @@ nav a:hover{opacity:.85}
 .hero-cta .btn{background:#111;color:#fff;font-weight:700;padding:14px 22px;border-radius:10px;box-shadow:var(--shadow);font-size:1.1rem}
 .hero-cta .btn:hover{opacity:.9}
 
-/* About */
+/* About Layout */
 .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
 .about-card{border:1px solid var(--line);border-radius:var(--radius);padding:18px;background:#fff;box-shadow:var(--shadow)}
-.checks{padding-left:18px}
-.checks li{margin:.35rem 0}
 @media (max-width:900px){.about-grid{grid-template-columns:1fr}}
 
-/* Kontakt */
+/* Feature-Kacheln (ein-/ausblendbar) */
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:16px;
+}
+@media (max-width:900px){.feature-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.feature-grid{grid-template-columns:1fr}}
+
+.feature{
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fff;
+  box-shadow:var(--shadow);
+  padding:12px;
+  text-align:left;
+  cursor:pointer;
+  transition:transform .12s ease, box-shadow .12s ease;
+  min-height:86px; /* kleine, viereckige Kacheln */
+}
+.feature:hover{transform:translateY(-1px)}
+.feature:focus{outline:3px solid rgba(0,0,0,.06)}
+
+.feature-head{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  font-weight:700;
+}
+.feature-title{font-size:1rem}
+.feature-icon{
+  width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);border-radius:8px;font-weight:900;line-height:1
+}
+
+.feature-body{
+  max-height:0;overflow:hidden;
+  transition:max-height .25s ease, margin-top .2s ease;
+  color:var(--muted);
+}
+.feature[aria-expanded="true"] .feature-body{
+  margin-top:8px;
+  max-height:200px; /* genug für 2 Zeilen Text */
+}
+.feature[aria-expanded="true"] .feature-icon{content:"-"}
+.feature[aria-expanded="true"] .feature-icon::after{content:"–"}
+.feature[aria-expanded="false"] .feature-icon::after{content:"+"}
+
+/* Erklärvideos */
+.video-wrap{position:relative}
+.explain-video{
+  width:100%;border:1px solid var(--line);border-radius:12px;background:#000;box-shadow:var(--shadow)
+}
+.video-desktop{display:block}
+.video-mobile{display:none}
+@media (max-width:768px){
+  .video-desktop{display:none}
+  .video-mobile{display:block}
+}
+
+/* Kontakt-Karte */
 .contact-card{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fff;box-shadow:var(--shadow);max-width:640px}
 .contact-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}
 .contact-row:last-child{border-bottom:0}
@@ -76,7 +133,10 @@ nav a:hover{opacity:.85}
 .form-field{display:flex;flex-direction:column;gap:8px}
 .form-field input,.form-field textarea{padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit}
 .form-full{grid-column:1/-1}
-.form-actions{margin-top:12px}
+.form-actions{margin-top:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.form-status{margin-left:8px;font-size:.95rem;color:var(--muted)}
+.form-status.success{color:#1a7f37}
+.form-status.error{color:#b42318}
 @media (max-width:800px){.form-grid{grid-template-columns:1fr}}
 
 /* Modal (AGB) */
@@ -85,6 +145,7 @@ nav a:hover{opacity:.85}
 .modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.45)}
 .modal-dialog{position:relative;max-width:900px;margin:60px auto;background:#fff;border-radius:12px;box-shadow:var(--shadow);padding:20px;max-height:80vh;overflow:auto}
 .modal-close{position:absolute;top:8px;right:8px;border:0;background:#000;color:#fff;width:34px;height:34px;border-radius:999px;font-size:20px;cursor:pointer}
+.modal-content h2{margin-top:0}
 
 /* Footer */
 .site-footer{border-top:1px solid var(--line);padding:28px 0;background:#fff}
@@ -93,4 +154,5 @@ nav a:hover{opacity:.85}
 .foot a:hover{text-decoration:underline}
 
 /* Buttons */
-.btn{cursor:pointer}
+.btn{cursor:pointer;background:#111;color:#fff;font-weight:700;padding:12px 18px;border-radius:10px;box-shadow:var(--shadow);text-decoration:none;display:inline-block}
+.btn:hover{opacity:.9}
