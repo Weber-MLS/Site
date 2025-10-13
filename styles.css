@@ -62,11 +62,11 @@ nav a:hover{opacity:.85}
 .about-card{border:1px solid var(--line);border-radius:var(--radius);padding:18px;background:#fff;box-shadow:var(--shadow)}
 @media (max-width:900px){.about-grid{grid-template-columns:1fr}}
 
-/* Feature-Kacheln (ein-/ausblendbar) */
+/* Feature-Kacheln (größer, Plus/Minus) */
 .feature-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:12px;
+  gap:16px;
   margin-top:16px;
 }
 @media (max-width:900px){.feature-grid{grid-template-columns:1fr 1fr}}
@@ -77,11 +77,11 @@ nav a:hover{opacity:.85}
   border-radius:12px;
   background:#fff;
   box-shadow:var(--shadow);
-  padding:12px;
+  padding:16px;
   text-align:left;
   cursor:pointer;
   transition:transform .12s ease, box-shadow .12s ease;
-  min-height:86px; /* kleine, viereckige Kacheln */
+  min-height:120px; /* größer als zuvor */
 }
 .feature:hover{transform:translateY(-1px)}
 .feature:focus{outline:3px solid rgba(0,0,0,.06)}
@@ -90,24 +90,23 @@ nav a:hover{opacity:.85}
   display:flex;align-items:center;justify-content:space-between;gap:10px;
   font-weight:700;
 }
-.feature-title{font-size:1rem}
+.feature-title{font-size:1.05rem}
 .feature-icon{
-  width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;
-  border:1px solid var(--line);border-radius:8px;font-weight:900;line-height:1
+  width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);border-radius:8px;font-weight:900;line-height:1;position:relative;
 }
+.feature-icon::after{content:"+";font-size:18px}
+.feature[aria-expanded="true"] .feature-icon::after{content:"–"} /* echtes Minus */
 
 .feature-body{
   max-height:0;overflow:hidden;
   transition:max-height .25s ease, margin-top .2s ease;
-  color:var(--muted);
+  color:var(--text);
 }
 .feature[aria-expanded="true"] .feature-body{
-  margin-top:8px;
-  max-height:200px; /* genug für 2 Zeilen Text */
+  margin-top:10px;
+  max-height:240px;
 }
-.feature[aria-expanded="true"] .feature-icon{content:"-"}
-.feature[aria-expanded="true"] .feature-icon::after{content:"–"}
-.feature[aria-expanded="false"] .feature-icon::after{content:"+"}
 
 /* Erklärvideos */
 .video-wrap{position:relative}
@@ -121,13 +120,7 @@ nav a:hover{opacity:.85}
   .video-mobile{display:block}
 }
 
-/* Kontakt-Karte */
-.contact-card{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fff;box-shadow:var(--shadow);max-width:640px}
-.contact-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}
-.contact-row:last-child{border-bottom:0}
-.contact-link{font-weight:700;text-decoration:none;color:var(--accent)}
-
-/* Formular */
+/* Kontaktformular */
 .contact-form{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fff;box-shadow:var(--shadow)}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .form-field{display:flex;flex-direction:column;gap:8px}
@@ -139,7 +132,7 @@ nav a:hover{opacity:.85}
 .form-status.error{color:#b42318}
 @media (max-width:800px){.form-grid{grid-template-columns:1fr}}
 
-/* Modal (AGB) */
+/* Modal (AGB/Impressum) */
 .modal{position:fixed;inset:0;display:none}
 .modal.show{display:block}
 .modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.45)}
