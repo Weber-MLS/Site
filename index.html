@@ -34,7 +34,7 @@
       <video class="hero-video" autoplay muted loop playsinline poster="Images/Bild1.jpg">
         <source src="Images/video1.mp4" type="video/mp4" />
       </video>
-      <!-- Mobile-Fallback ohne Playbutton -->
+      <!-- Mobile-Fallback ohne Playbutton (jetzt vollständige Ansicht) -->
       <img class="hero-fallback" src="Images/Bild1.jpg" alt="Weber & MLS Fahrdienst" />
     </div>
     <div class="container hero-content"></div>
@@ -45,6 +45,25 @@
     <div class="container">
       <div class="hero-cta">
         <a class="btn" href="#kontaktformular">Jetzt Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kleiner Kontaktblock ganz oben -->
+  <section id="contact-top" class="section small-contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>Rufen Sie uns an</h2>
+      </div>
+      <div class="contact-card">
+        <div class="contact-row">
+          <span>Telefon</span>
+          <a href="tel:+491752578772" class="contact-link">0175 2578772</a>
+        </div>
+        <div class="contact-row">
+          <span>E-Mail</span>
+          <a href="mailto:fahrdienst@weber-mls.de" class="contact-link">fahrdienst@weber-mls.de</a>
+        </div>
       </div>
     </div>
   </section>
@@ -61,15 +80,15 @@
         <video class="explain-video video-desktop" controls playsinline>
           <source src="Images/animation- web.mp4" type="video/mp4" />
         </video>
-        <!-- Mobile/Phone-Version -->
+        <!-- Mobile zeigt jetzt auch die Web-Version -->
         <video class="explain-video video-mobile" controls playsinline>
-          <source src="Images/animation- phone.mp4" type="video/mp4" />
+          <source src="Images/animation- web.mp4" type="video/mp4" />
         </video>
       </div>
     </div>
   </section>
 
-  <!-- Rund um Service (nach oben gezogen) -->
+  <!-- Rund um Service (oberhalb „Über uns“) -->
   <section id="full-service" class="section">
     <div class="container">
       <div class="section-head">
@@ -79,7 +98,7 @@
         Vom ersten Kontakt über die Abrechnung mit der Krankenkasse bis hin zur Fahrt – wir übernehmen alle Angelegenheiten.
       </p>
 
-      <!-- Größere Feature-Kacheln mit Plus/Minus -->
+      <!-- Größere Feature-Kacheln mit genau einem Plus/Minus -->
       <div class="feature-grid" role="list">
         <button class="feature" aria-expanded="false" aria-controls="f1" role="listitem">
           <div class="feature-head">
@@ -257,14 +276,35 @@
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Kontakt-Modal (wie AGB/Impressum) -->
+  <div class="modal" id="kontaktModal" aria-hidden="true" role="dialog" aria-labelledby="kontaktTitle">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-dialog" role="document">
+      <button class="modal-close" id="closeKontakt" aria-label="Kontakt schließen">×</button>
+      <div class="modal-content">
+        <h2 id="kontaktTitle">Kontakt</h2>
+        <div class="contact-card">
+          <div class="contact-row">
+            <span>Telefon</span>
+            <a href="tel:+491752578772" class="contact-link">0175 2578772</a>
+          </div>
+          <div class="contact-row">
+            <span>E-Mail</span>
+            <a href="mailto:fahrdienst@weber-mls.de" class="contact-link">fahrdienst@weber-mls.de</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer mit kleinen Links -->
   <footer class="site-footer">
     <div class="container foot">
       <p>© <span id="year"></span> Weber &amp; MLS Fahrdienst GmbH</p>
       <p>
         <a href="#" id="footerImpressumLink">Impressum</a> ·
         <a href="#" id="footerAgbLink">AGB</a> ·
-        <a href="#kontaktformular">Kontakt</a> ·
+        <a href="#" id="footerKontaktLink">Kontakt</a> ·
         <a href="#">Datenschutz</a>
       </p>
     </div>
