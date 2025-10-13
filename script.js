@@ -9,29 +9,37 @@ if (navToggle && navList) {
 const y = document.getElementById('year');
 if (y) y.textContent = new Date().getFullYear();
 
-// AGB Modal
+// ----- Modals: AGB, Impressum, Kontakt -----
 const footerAgbLink = document.getElementById('footerAgbLink');
 const agbModal = document.getElementById('agbModal');
 const closeAgb = document.getElementById('closeAgb');
-function showAgb(){ agbModal?.classList.add('show'); agbModal?.setAttribute('aria-hidden','false'); }
-function hideAgb(){ agbModal?.classList.remove('show'); agbModal?.setAttribute('aria-hidden','true'); }
-footerAgbLink?.addEventListener('click', e => { e.preventDefault(); showAgb(); });
-closeAgb?.addEventListener('click', hideAgb);
-agbModal?.addEventListener('click', e => { if (e.target?.hasAttribute?.('data-close')) hideAgb(); });
 
-// Impressum Modal
 const footerImpressumLink = document.getElementById('footerImpressumLink');
 const impressumModal = document.getElementById('impressumModal');
 const closeImpressum = document.getElementById('closeImpressum');
-function showImpressum(){ impressumModal?.classList.add('show'); impressumModal?.setAttribute('aria-hidden','false'); }
-function hideImpressum(){ impressumModal?.classList.remove('show'); impressumModal?.setAttribute('aria-hidden','true'); }
-footerImpressumLink?.addEventListener('click', e => { e.preventDefault(); showImpressum(); });
-closeImpressum?.addEventListener('click', hideImpressum);
-impressumModal?.addEventListener('click', e => { if (e.target?.hasAttribute?.('data-close')) hideImpressum(); });
 
-// Escape schließt Modals
+const footerKontaktLink = document.getElementById('footerKontaktLink');
+const kontaktModal = document.getElementById('kontaktModal');
+const closeKontakt = document.getElementById('closeKontakt');
+
+function openModal(m){ m?.classList.add('show'); m?.setAttribute('aria-hidden','false'); }
+function closeModal(m){ m?.classList.remove('show'); m?.setAttribute('aria-hidden','true'); }
+
+footerAgbLink?.addEventListener('click', e => { e.preventDefault(); openModal(agbModal); });
+closeAgb?.addEventListener('click', () => closeModal(agbModal));
+agbModal?.addEventListener('click', e => { if (e.target?.hasAttribute?.('data-close')) closeModal(agbModal); });
+
+footerImpressumLink?.addEventListener('click', e => { e.preventDefault(); openModal(impressumModal); });
+closeImpressum?.addEventListener('click', () => closeModal(impressumModal));
+impressumModal?.addEventListener('click', e => { if (e.target?.hasAttribute?.('data-close')) closeModal(impressumModal); });
+
+footerKontaktLink?.addEventListener('click', e => { e.preventDefault(); openModal(kontaktModal); });
+closeKontakt?.addEventListener('click', () => closeModal(kontaktModal));
+kontaktModal?.addEventListener('click', e => { if (e.target?.hasAttribute?.('data-close')) closeModal(kontaktModal); });
+
+// Escape schließt die Modals
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { hideAgb(); hideImpressum(); }
+  if (e.key === 'Escape') { closeModal(agbModal); closeModal(impressumModal); closeModal(kontaktModal); }
 });
 
 // Feature-Kacheln: Ein-/Ausblenden (ein Plus/Minus)
