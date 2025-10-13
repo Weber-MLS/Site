@@ -19,8 +19,8 @@
       <nav>
         <ul id="navList">
           <li><a href="#start">Startseite</a></li>
+          <li><a href="#full-service">Rund um Service</a></li>
           <li><a href="#about">Über uns</a></li>
-          <li><a href="#contact">Kontakt</a></li>
           <li><a href="#kontaktformular">Kontaktformular</a></li>
         </ul>
       </nav>
@@ -49,67 +49,6 @@
     </div>
   </section>
 
-  <!-- Über uns -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Über uns</h2>
-        <p class="muted">Wir bewegen Menschen – sicher, pünktlich, zuverlässig.</p>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-text">
-          <p>Mit uns kommen Sie entspannt und zuverlässig an. Ganz gleich, ob es zum Arzt, zur Reha oder zur Klinik geht – wir sind pünktlich für Sie da und sorgen für eine angenehme Fahrt. Auf Wunsch kümmern wir uns auch um Ihre Rückfahrt. Unser geschultes und qualifiziertes Team verbindet Kompetenz mit einer aufmerksamen und persönlichen Betreuung.</p>
-
-          <!-- NEU: Viereckige Kacheln zum Ein-/Ausblenden -->
-          <div class="feature-grid" role="list">
-            <button class="feature" aria-expanded="false" aria-controls="f1" role="listitem">
-              <div class="feature-head">
-                <span class="feature-title">Sicher &amp; barrierefrei</span>
-                <span class="feature-icon" aria-hidden="true">+</span>
-              </div>
-              <div class="feature-body" id="f1">
-                mit rollstuhlgerechten Fahrzeugen, die auf Ihre Bedürfnisse abgestimmt sind
-              </div>
-            </button>
-
-            <button class="feature" aria-expanded="false" aria-controls="f2" role="listitem">
-              <div class="feature-head">
-                <span class="feature-title">Persönlich abgestimmt</span>
-                <span class="feature-icon" aria-hidden="true">+</span>
-              </div>
-              <div class="feature-body" id="f2">
-                Routen und Zeiten werden passgenau für Sie geplant
-              </div>
-            </button>
-
-            <button class="feature" aria-expanded="false" aria-controls="f3" role="listitem">
-              <div class="feature-head">
-                <span class="feature-title">Kompetent &amp; aufmerksam</span>
-                <span class="feature-icon" aria-hidden="true">+</span>
-              </div>
-              <div class="feature-body" id="f3">
-                unser geschultes Team verbindet Fachkenntnis mit Fürsorge und Respekt
-              </div>
-            </button>
-          </div>
-        </div>
-
-        <!-- Leistungen-Karte -->
-        <div class="about-card">
-          <h3>Unsere Leistungen</h3>
-          <ul>
-            <li>Fahrten zu Arztterminen</li>
-            <li>Ambulante Behandlungen &amp; Klinikentlassungen</li>
-            <li>Reha- &amp; Dialysefahrten</li>
-            <li>Rollstuhlgerechte Beförderung</li>
-            <li>Längere Fahrten auf Anfrage</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Unkompliziert buchen - Erklärvideos -->
   <section id="easy-book" class="section">
     <div class="container">
@@ -130,31 +69,74 @@
     </div>
   </section>
 
-  <!-- Rund um Service -->
+  <!-- Rund um Service (nach oben gezogen) -->
   <section id="full-service" class="section">
     <div class="container">
       <div class="section-head">
         <h2>Rund um Service</h2>
-        <p class="muted">Vom ersten Kontakt über die Abrechnung mit der Krankenkasse bis hin zur Fahrt – wir übernehmen alle Angelegenheiten.</p>
+      </div>
+      <p>
+        Vom ersten Kontakt über die Abrechnung mit der Krankenkasse bis hin zur Fahrt – wir übernehmen alle Angelegenheiten.
+      </p>
+
+      <!-- Größere Feature-Kacheln mit Plus/Minus -->
+      <div class="feature-grid" role="list">
+        <button class="feature" aria-expanded="false" aria-controls="f1" role="listitem">
+          <div class="feature-head">
+            <span class="feature-title">Sicher &amp; barrierefrei</span>
+            <span class="feature-icon" aria-hidden="true"></span>
+          </div>
+          <div class="feature-body" id="f1">
+            Mit rollstuhlgerechten Fahrzeugen, die auf Ihre Bedürfnisse abgestimmt sind
+          </div>
+        </button>
+
+        <button class="feature" aria-expanded="false" aria-controls="f2" role="listitem">
+          <div class="feature-head">
+            <span class="feature-title">Persönlich abgestimmt</span>
+            <span class="feature-icon" aria-hidden="true"></span>
+          </div>
+          <div class="feature-body" id="f2">
+            Routen und Zeiten werden passgenau für Sie geplant
+          </div>
+        </button>
+
+        <button class="feature" aria-expanded="false" aria-controls="f3" role="listitem">
+          <div class="feature-head">
+            <span class="feature-title">Kompetent &amp; aufmerksam</span>
+            <span class="feature-icon" aria-hidden="true"></span>
+          </div>
+          <div class="feature-body" id="f3">
+            Unser geschultes Team verbindet Fachkenntnis mit Fürsorge und Respekt
+          </div>
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- Kontakt -->
-  <section id="contact" class="section">
+  <!-- Über uns -->
+  <section id="about" class="section">
     <div class="container">
       <div class="section-head">
-        <h2>Kontakt</h2>
-        <p class="muted">Wir melden uns schnellstmöglich.</p>
+        <h2>Über uns</h2>
+        <p class="muted">Wir bewegen Menschen – sicher, pünktlich, zuverlässig.</p>
       </div>
-      <div class="contact-card">
-        <div class="contact-row">
-          <span>Telefon</span>
-          <a href="tel:+491752578772" class="contact-link">0175 2578772</a>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Mit uns kommen Sie entspannt und zuverlässig an. Ganz gleich, ob es zum Arzt, zur Reha oder zur Klinik geht – wir sind pünktlich für Sie da und sorgen für eine angenehme Fahrt. Auf Wunsch kümmern wir uns auch um Ihre Rückfahrt. Unser geschultes und qualifiziertes Team verbindet Kompetenz mit einer aufmerksamen und persönlichen Betreuung.</p>
         </div>
-        <div class="contact-row">
-          <span>E-Mail</span>
-          <a href="mailto:fahrdienst@weber-mls.de" class="contact-link">fahrdienst@weber-mls.de</a>
+
+        <!-- Leistungen-Karte -->
+        <div class="about-card">
+          <h3>Unsere Leistungen</h3>
+          <ul>
+            <li>Fahrten zu Arztterminen</li>
+            <li>Ambulante Behandlungen &amp; Klinikentlassungen</li>
+            <li>Reha- &amp; Dialysefahrten</li>
+            <li>Rollstuhlgerechte Beförderung</li>
+            <li>Längere Fahrten auf Anfrage</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -211,7 +193,7 @@
     </div>
   </section>
 
-  <!-- AGB Modal (nur über Footer-Link erreichbar) -->
+  <!-- AGB Modal -->
   <div class="modal" id="agbModal" aria-hidden="true" role="dialog" aria-labelledby="agbTitle">
     <div class="modal-backdrop" data-close></div>
     <div class="modal-dialog" role="document">
@@ -252,11 +234,39 @@
     </div>
   </div>
 
+  <!-- Impressum Modal -->
+  <div class="modal" id="impressumModal" aria-hidden="true" role="dialog" aria-labelledby="impressumTitle">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-dialog" role="document">
+      <button class="modal-close" id="closeImpressum" aria-label="Impressum schließen">×</button>
+      <div class="modal-content">
+        <h2 id="impressumTitle">Impressum</h2>
+        <p><strong>Geschäftsführer:</strong><br>
+          Nii Bruce Weber<br>
+          Modou Lamin Sanyan
+        </p>
+        <p><strong>Geschäftsadresse:</strong><br>
+          Großbeerenstr. 2<br>
+          12107 Berlin, Deutschland
+        </p>
+        <p><strong>Kontakt:</strong><br>
+          Telefon: 0175 2578772<br>
+          E-Mail: <a href="mailto:fahrdienst@weber-mls.de">fahrdienst@weber-mls.de</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container foot">
       <p>© <span id="year"></span> Weber &amp; MLS Fahrdienst GmbH</p>
-      <p><a href="#">Impressum</a> · <a href="#" id="footerAgbLink">AGB</a> · <a href="#">Datenschutz</a></p>
+      <p>
+        <a href="#" id="footerImpressumLink">Impressum</a> ·
+        <a href="#" id="footerAgbLink">AGB</a> ·
+        <a href="#kontaktformular">Kontakt</a> ·
+        <a href="#">Datenschutz</a>
+      </p>
     </div>
   </footer>
 </body>
