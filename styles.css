@@ -44,12 +44,21 @@ nav a:hover{opacity:.85}
 
 /* Hero mit Video/Bild */
 .hero{position:relative;border-bottom:1px solid var(--line)}
-.hero-media{height:58vh;min-height:420px;max-height:720px;overflow:hidden;background:#f4f6f8;position:relative}
-.hero-video,.hero-fallback{width:100%;height:100%;object-fit:cover;display:block}
+.hero-media{height:58vh;min-height:420px;max-height:720px;overflow:hidden;background:#fff;position:relative}
+.hero-video,.hero-fallback{width:100%;height:100%;display:block}
+.hero-video{object-fit:cover}
 .hero-fallback{display:none}
+
+/* Mobile: Bild statt Video, komplett sichtbar (keine Beschnitte) */
 @media (max-width:768px){
   .hero-video{display:none}
-  .hero-fallback{display:block}
+  .hero-fallback{
+    display:block;
+    object-fit:contain;           /* Bild vollständig zeigen */
+    object-position:center center;
+    background:#fff;
+    padding:8px;                  /* etwas Luft, damit nichts anschneidet */
+  }
 }
 
 /* CTA */
@@ -57,12 +66,15 @@ nav a:hover{opacity:.85}
 .hero-cta .btn{background:#111;color:#fff;font-weight:700;padding:14px 22px;border-radius:10px;box-shadow:var(--shadow);font-size:1.1rem}
 .hero-cta .btn:hover{opacity:.9}
 
+/* Kleiner Kontaktblock */
+.small-contact .contact-card{max-width:640px;margin-top:8px}
+
 /* About Layout */
 .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
 .about-card{border:1px solid var(--line);border-radius:var(--radius);padding:18px;background:#fff;box-shadow:var(--shadow)}
 @media (max-width:900px){.about-grid{grid-template-columns:1fr}}
 
-/* Feature-Kacheln (größer, Plus/Minus) */
+/* Feature-Kacheln (größer, genau ein Plus/Minus) */
 .feature-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -81,7 +93,7 @@ nav a:hover{opacity:.85}
   text-align:left;
   cursor:pointer;
   transition:transform .12s ease, box-shadow .12s ease;
-  min-height:120px; /* größer als zuvor */
+  min-height:120px;
 }
 .feature:hover{transform:translateY(-1px)}
 .feature:focus{outline:3px solid rgba(0,0,0,.06)}
@@ -120,7 +132,13 @@ nav a:hover{opacity:.85}
   .video-mobile{display:block}
 }
 
-/* Kontaktformular */
+/* Kontakt/Info-Karten */
+.contact-card{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fff;box-shadow:var(--shadow)}
+.contact-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}
+.contact-row:last-child{border-bottom:0}
+.contact-link{font-weight:700;text-decoration:none;color:var(--accent)}
+
+/* Formular */
 .contact-form{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fff;box-shadow:var(--shadow)}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .form-field{display:flex;flex-direction:column;gap:8px}
@@ -132,7 +150,7 @@ nav a:hover{opacity:.85}
 .form-status.error{color:#b42318}
 @media (max-width:800px){.form-grid{grid-template-columns:1fr}}
 
-/* Modal (AGB/Impressum) */
+/* Modal (AGB/Impressum/Kontakt) */
 .modal{position:fixed;inset:0;display:none}
 .modal.show{display:block}
 .modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.45)}
