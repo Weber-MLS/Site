@@ -20,7 +20,6 @@
         <ul id="navList">
           <li><a href="#start">Startseite</a></li>
           <li><a href="#about">Über uns</a></li>
-          <li><a href="#videos">Unkompliziert buchen</a></li>
           <li><a href="#contact">Kontakt</a></li>
           <li><a href="#kontaktformular">Kontaktformular</a></li>
         </ul>
@@ -62,34 +61,41 @@
         <div class="about-text">
           <p>Mit uns kommen Sie entspannt und zuverlässig an. Ganz gleich, ob es zum Arzt, zur Reha oder zur Klinik geht – wir sind pünktlich für Sie da und sorgen für eine angenehme Fahrt. Auf Wunsch kümmern wir uns auch um Ihre Rückfahrt. Unser geschultes und qualifiziertes Team verbindet Kompetenz mit einer aufmerksamen und persönlichen Betreuung.</p>
 
-          <!-- Feature-Kacheln (ein-/ausblendbar) -->
-          <div class="features-grid">
-            <button class="feature-tile" data-toggle>
-              <span class="feature-title">Sicher &amp; barrierefrei</span>
-              <span class="feature-plus" aria-hidden="true">+</span>
-              <div class="feature-content">
+          <!-- NEU: Viereckige Kacheln zum Ein-/Ausblenden -->
+          <div class="feature-grid" role="list">
+            <button class="feature" aria-expanded="false" aria-controls="f1" role="listitem">
+              <div class="feature-head">
+                <span class="feature-title">Sicher &amp; barrierefrei</span>
+                <span class="feature-icon" aria-hidden="true">+</span>
+              </div>
+              <div class="feature-body" id="f1">
                 mit rollstuhlgerechten Fahrzeugen, die auf Ihre Bedürfnisse abgestimmt sind
               </div>
             </button>
 
-            <button class="feature-tile" data-toggle>
-              <span class="feature-title">Persönlich abgestimmt</span>
-              <span class="feature-plus" aria-hidden="true">+</span>
-              <div class="feature-content">
+            <button class="feature" aria-expanded="false" aria-controls="f2" role="listitem">
+              <div class="feature-head">
+                <span class="feature-title">Persönlich abgestimmt</span>
+                <span class="feature-icon" aria-hidden="true">+</span>
+              </div>
+              <div class="feature-body" id="f2">
                 Routen und Zeiten werden passgenau für Sie geplant
               </div>
             </button>
 
-            <button class="feature-tile" data-toggle>
-              <span class="feature-title">Kompetent &amp; aufmerksam</span>
-              <span class="feature-plus" aria-hidden="true">+</span>
-              <div class="feature-content">
+            <button class="feature" aria-expanded="false" aria-controls="f3" role="listitem">
+              <div class="feature-head">
+                <span class="feature-title">Kompetent &amp; aufmerksam</span>
+                <span class="feature-icon" aria-hidden="true">+</span>
+              </div>
+              <div class="feature-body" id="f3">
                 unser geschultes Team verbindet Fachkenntnis mit Fürsorge und Respekt
               </div>
             </button>
           </div>
         </div>
 
+        <!-- Leistungen-Karte -->
         <div class="about-card">
           <h3>Unsere Leistungen</h3>
           <ul>
@@ -104,36 +110,32 @@
     </div>
   </section>
 
-  <!-- Rund um Service -->
-  <section class="section" id="service">
+  <!-- Unkompliziert buchen - Erklärvideos -->
+  <section id="easy-book" class="section">
     <div class="container">
       <div class="section-head">
-        <h2>Rund um Service</h2>
-        <p class="muted">Vom ersten Kontakt über die Abrechnung mit der Krankenkasse bis hin zur Fahrt – wir übernehmen alle Angelegenheiten.</p>
+        <h2>Unkompliziert buchen</h2>
+        <p class="muted">So einfach geht die Anfrage – kurz erklärt.</p>
+      </div>
+      <div class="video-wrap">
+        <!-- Desktop/Web-Version -->
+        <video class="explain-video video-desktop" controls playsinline>
+          <source src="Images/animation- web.mp4" type="video/mp4" />
+        </video>
+        <!-- Mobile/Phone-Version -->
+        <video class="explain-video video-mobile" controls playsinline>
+          <source src="Images/animation- phone.mp4" type="video/mp4" />
+        </video>
       </div>
     </div>
   </section>
 
-  <!-- Unkompliziert buchen (Erklärvideos) -->
-  <section id="videos" class="section video-section">
+  <!-- Rund um Service -->
+  <section id="full-service" class="section">
     <div class="container">
       <div class="section-head">
-        <h2>Unkompliziert buchen</h2>
-        <p class="muted">So einfach geht’s – kurz erklärt.</p>
-      </div>
-
-      <div class="video-wrapper">
-        <!-- Web/Desktop Version -->
-        <video class="video-web" controls playsinline>
-          <source src="Images/animation-web.mp4" type="video/mp4" />
-          Ihr Browser unterstützt das Video-Tag nicht.
-        </video>
-
-        <!-- Mobile/Phone Version -->
-        <video class="video-phone" controls playsinline>
-          <source src="Images/animation-phone.mp4" type="video/mp4" />
-          Ihr Browser unterstützt das Video-Tag nicht.
-        </video>
+        <h2>Rund um Service</h2>
+        <p class="muted">Vom ersten Kontakt über die Abrechnung mit der Krankenkasse bis hin zur Fahrt – wir übernehmen alle Angelegenheiten.</p>
       </div>
     </div>
   </section>
@@ -171,6 +173,7 @@
             action="https://formsubmit.co/fahrdienst@weber-mls.de"
             method="POST"
             enctype="application/x-www-form-urlencoded">
+        <!-- FormSubmit: Anti-Spam & Optionen -->
         <input type="text" name="_honey" style="display:none">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_next" value="https://deine-domain.de/#kontaktformular">
@@ -208,7 +211,7 @@
     </div>
   </section>
 
-  <!-- AGB Modal (nur per Footer-Link erreichbar) -->
+  <!-- AGB Modal (nur über Footer-Link erreichbar) -->
   <div class="modal" id="agbModal" aria-hidden="true" role="dialog" aria-labelledby="agbTitle">
     <div class="modal-backdrop" data-close></div>
     <div class="modal-dialog" role="document">
