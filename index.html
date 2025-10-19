@@ -30,9 +30,11 @@
   <!-- Hero -->
   <section id="start" class="hero">
     <div class="hero-media" aria-hidden="true">
+      <!-- Desktop-Video -->
       <video class="hero-video" autoplay muted loop playsinline poster="Images/Bild1.jpg">
         <source src="Images/video1.mp4" type="video/mp4" />
       </video>
+      <!-- Mobile-Fallback: vollständige Bildansicht (keine Beschnitte) -->
       <img class="hero-fallback" src="Images/Bild1.jpg" alt="Weber & MLS Fahrdienst" />
     </div>
     <div class="container hero-content"></div>
@@ -70,6 +72,26 @@
     </div>
   </section>
 
+  <!-- Unkompliziert buchen - Erklärvideos -->
+  <section id="easy-book" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Unkompliziert buchen</h2>
+        <p class="muted">So einfach geht die Anfrage – kurz erklärt.</p>
+      </div>
+      <div class="video-wrap">
+        <!-- Desktop/Web-Version -->
+        <video class="explain-video video-desktop" controls playsinline>
+          <source src="Images/animation- web.mp4" type="video/mp4" />
+        </video>
+        <!-- Mobile zeigt die Web-Version -->
+        <video class="explain-video video-mobile" controls playsinline>
+          <source src="Images/animation- web.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </section>
+
   <!-- Rund um Service -->
   <section id="full-service" class="section">
     <div class="container">
@@ -80,11 +102,12 @@
         Vom ersten Kontakt über die Abrechnung mit der Krankenkasse bis hin zur Fahrt – wir übernehmen alle Angelegenheiten.
       </p>
 
+      <!-- Größere Feature-Kacheln -->
       <div class="feature-grid" role="list">
         <button class="feature" aria-expanded="false" aria-controls="f1" role="listitem">
           <div class="feature-head">
             <span class="feature-title">Sicher &amp; barrierefrei</span>
-            <span class="feature-icon"></span>
+            <span class="feature-icon" aria-hidden="true"></span>
           </div>
           <div class="feature-body" id="f1">
             Mit rollstuhlgerechten Fahrzeugen, die auf Ihre Bedürfnisse abgestimmt sind
@@ -94,7 +117,7 @@
         <button class="feature" aria-expanded="false" aria-controls="f2" role="listitem">
           <div class="feature-head">
             <span class="feature-title">Persönlich abgestimmt</span>
-            <span class="feature-icon"></span>
+            <span class="feature-icon" aria-hidden="true"></span>
           </div>
           <div class="feature-body" id="f2">
             Routen und Zeiten werden passgenau für Sie geplant
@@ -104,7 +127,7 @@
         <button class="feature" aria-expanded="false" aria-controls="f3" role="listitem">
           <div class="feature-head">
             <span class="feature-title">Kompetent &amp; aufmerksam</span>
-            <span class="feature-icon"></span>
+            <span class="feature-icon" aria-hidden="true"></span>
           </div>
           <div class="feature-body" id="f3">
             Unser geschultes Team verbindet Fachkenntnis mit Fürsorge und Respekt
@@ -149,11 +172,15 @@
         <p class="muted">Senden Sie uns Ihre Anfrage – wir melden uns zeitnah.</p>
       </div>
 
-      <form id="contactForm" action="https://formsubmit.co/fahrdienst@weber-mls.de" method="POST">
+      <form id="contactForm" class="contact-form"
+            action="https://formsubmit.co/fahrdienst@weber-mls.de"
+            method="POST" enctype="application/x-www-form-urlencoded">
+        <!-- FormSubmit Optionen -->
         <input type="text" name="_honey" style="display:none">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_next" value="https://deine-domain.de/#kontaktformular">
         <input type="hidden" name="_subject" value="Neue Anfrage über das Kontaktformular">
+        <input type="hidden" name="_template" value="table">
 
         <div class="form-grid">
           <div class="form-field">
@@ -180,17 +207,58 @@
 
         <div class="form-actions">
           <button type="submit" class="btn">Anfrage senden</button>
-          <span id="formStatus" class="form-status"></span>
+          <span id="formStatus" class="form-status" aria-live="polite"></span>
         </div>
       </form>
     </div>
   </section>
 
+  <!-- AGB Modal -->
+  <div class="modal" id="agbModal" aria-hidden="true" role="dialog" aria-labelledby="agbTitle">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-dialog" role="document">
+      <button class="modal-close" id="closeAgb" aria-label="AGB schließen">×</button>
+      <div class="modal-content">
+        <h2 id="agbTitle">Allgemeine Geschäftsbedingungen (AGB)</h2>
+
+        <h3>§ 1 Geltungsbereich</h3>
+        <p>Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge über die Durchführung von Personenbeförderungsleistungen durch <strong>Weber &amp; MLS Fahrdienst GmbH</strong>. Dazu zählen insbesondere Krankenfahrten (sitzend) nach § 49 PBefG. Eine medizinische Betreuung findet nicht statt.</p>
+
+        <h3>§ 2 Vertragsabschluss</h3>
+        <p>Der Beförderungsvertrag kommt zustande durch eine telefonische, schriftliche oder elektronische Buchung des Kunden und die Bestätigung durch <strong>Weber &amp; MLS Fahrdienst GmbH</strong>.</p>
+
+        <h3>§ 3 Leistungen</h3>
+        <p><strong>Weber &amp; MLS Fahrdienst GmbH</strong> führt Personenbeförderungen im Rahmen der erteilten Genehmigungen nach PBefG durch. Eine medizinische Betreuung findet nicht statt.</p>
+
+        <h3>§ 4 Preise und Zahlungsbedingungen</h3>
+        <p>Es gelten die jeweils vereinbarten Preise oder die gültigen Verträge mit den Krankenkassen. Die Abrechnung erfolgt grundsätzlich auf Rechnung oder direkt mit den Krankenkassen. Kassenpatienten sind verpflichtet, ggf. anfallende gesetzliche Eigenanteile selbst zu bezahlen.</p>
+
+        <h3>§ 5 Wartezeiten und Verzögerungen</h3>
+        <p>Wartezeiten, die durch den Kunden verursacht werden, werden gesondert berechnet. Für Verspätungen durch Verkehr, Witterung oder höhere Gewalt übernimmt <strong>Weber &amp; MLS Fahrdienst GmbH</strong> keine Haftung.</p>
+
+        <h3>§ 6 Mitwirkungspflichten des Kunden</h3>
+        <p>Der Kunde ist verpflichtet, alle für die Durchführung der Fahrt erforderlichen Angaben korrekt zu machen. Begleitpersonen sind bei Bedarf vom Kunden selbst zu stellen. Der Kunde hat sich so zu verhalten, dass die Sicherheit des Fahrzeugs und der Insassen nicht gefährdet wird.</p>
+
+        <h3>§ 7 Haftung</h3>
+        <p><strong>Weber &amp; MLS Fahrdienst GmbH</strong> haftet nur für Schäden, die auf grober Fahrlässigkeit oder Vorsatz beruhen. Eine Haftung für leichte Fahrlässigkeit wird ausgeschlossen, soweit keine Kardinalpflichten betroffen sind. Für Verspätungen oder Fahrtabbrüche infolge höherer Gewalt wird keine Haftung übernommen.</p>
+
+        <h3>§ 8 Stornierungen</h3>
+        <p>Stornierungen sind bis 24 Stunden vor Fahrtantritt kostenfrei möglich. Bei späterer Stornierung oder Nichtantritt wird ein Ausfallentgelt berechnet.</p>
+
+        <h3>§ 9 Datenschutz</h3>
+        <p>Personenbezogene Daten werden ausschließlich im Rahmen der gesetzlichen Vorschriften (insbesondere DSGVO) verarbeitet und nicht an unberechtigte Dritte weitergegeben.</p>
+
+        <h3>§ 10 Schlussbestimmungen</h3>
+        <p>Es gilt deutsches Recht. Gerichtsstand ist der Sitz von <strong>Weber &amp; MLS Fahrdienst GmbH</strong>. Sollten einzelne Bestimmungen unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- Impressum Modal -->
   <div class="modal" id="impressumModal" aria-hidden="true" role="dialog" aria-labelledby="impressumTitle">
     <div class="modal-backdrop" data-close></div>
     <div class="modal-dialog" role="document">
-      <button class="modal-close" id="closeImpressum">×</button>
+      <button class="modal-close" id="closeImpressum" aria-label="Impressum schließen">×</button>
       <div class="modal-content">
         <h2 id="impressumTitle">Impressum</h2>
 
@@ -204,13 +272,14 @@
           12107 Berlin, Deutschland
         </p>
 
+        <!-- Handelsregister -->
         <div class="register-block">
           <h3>Handelsregister</h3>
           <p><strong>Amtsgericht:</strong> Charlottenburg<br>
              <strong>Registerart:</strong> Handelsregister Abteilung B<br>
              <strong>Nummer:</strong> HRB 278436 B
           </p>
-          <p><strong>Firma:</strong> Weber & MLS Fahrdienst GmbH</p>
+          <p><strong>Firma:</strong> Weber &amp; MLS Fahrdienst GmbH</p>
           <p><strong>Sitz:</strong> Berlin<br>
              Großbeerenstraße 2, Gebäude 3, 12107 Berlin
           </p>
@@ -222,12 +291,11 @@
           <p><strong>Vertretungsregelung:</strong><br>
              Ein Geschäftsführer alleinvertretungsberechtigt; mehrere Geschäftsführer gemeinschaftlich mit einem weiteren Geschäftsführer oder einem Prokuristen.
           </p>
-          <p><strong>Geschäftsführer:</strong><br>
-            <ul>
-              <li>Sangyang, Modou Lamin, *18.11.1991, Berlin</li>
-              <li>Weber, Nii Bruce, *07.08.1998, Berlin</li>
-            </ul>
-          </p>
+          <p><strong>Geschäftsführer:</strong></p>
+          <ul>
+            <li>Sangyang, Modou Lamin, *18.11.1991, Berlin</li>
+            <li>Weber, Nii Bruce, *07.08.1998, Berlin</li>
+          </ul>
           <p><strong>Rechtsform:</strong> Gesellschaft mit beschränkter Haftung (GmbH)</p>
           <p><strong>Gesellschaftsvertrag vom:</strong> 25.07.2025</p>
           <p><strong>Tag der letzten Eintragung:</strong> 21.08.2025</p>
@@ -242,14 +310,39 @@
     </div>
   </div>
 
+  <!-- Kontakt-Modal -->
+  <div class="modal" id="kontaktModal" aria-hidden="true" role="dialog" aria-labelledby="kontaktTitle">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-dialog" role="document">
+      <button class="modal-close" id="closeKontakt" aria-label="Kontakt schließen">×</button>
+      <div class="modal-content">
+        <h2 id="kontaktTitle">Kontakt</h2>
+        <div class="contact-card">
+          <div class="contact-row">
+            <span>Telefon</span>
+            <a href="tel:+491752578772" class="contact-link">0175 2578772</a>
+          </div>
+          <div class="contact-row">
+            <span>Telefon 2</span>
+            <a href="tel:+4915119138505" class="contact-link">0151 19138505</a>
+          </div>
+          <div class="contact-row">
+            <span>E-Mail</span>
+            <a href="mailto:fahrdienst@weber-mls.de" class="contact-link">fahrdienst@weber-mls.de</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container foot">
-      <p>© <span id="year"></span> Weber & MLS Fahrdienst GmbH</p>
+      <p>© <span id="year"></span> Weber &amp; MLS Fahrdienst GmbH</p>
       <p>
-        <a href="#" id="footerImpressumLink">Impressum</a> · 
-        <a href="#" id="footerAgbLink">AGB</a> · 
-        <a href="#" id="footerKontaktLink">Kontakt</a> · 
+        <a href="#" id="footerImpressumLink">Impressum</a> ·
+        <a href="#" id="footerAgbLink">AGB</a> ·
+        <a href="#" id="footerKontaktLink">Kontakt</a> ·
         <a href="#">Datenschutz</a>
       </p>
     </div>
