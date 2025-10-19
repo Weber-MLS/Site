@@ -37,9 +37,11 @@ footerKontaktLink?.addEventListener('click', e => { e.preventDefault(); openModa
 closeKontakt?.addEventListener('click', () => closeModal(kontaktModal));
 kontaktModal?.addEventListener('click', e => { if (e.target?.hasAttribute?.('data-close')) closeModal(kontaktModal); });
 
-// Escape schließt die Modals
+// ESC schließt alle
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { closeModal(agbModal); closeModal(impressumModal); closeModal(kontaktModal); }
+  if (e.key === 'Escape') {
+    closeModal(agbModal); closeModal(impressumModal); closeModal(kontaktModal);
+  }
 });
 
 // Feature-Kacheln: Ein-/Ausblenden (ein Plus/Minus)
