@@ -167,3 +167,30 @@ nav a:hover{opacity:.85}
 /* Buttons */
 .btn{cursor:pointer;background:#111;color:#fff;font-weight:700;padding:12px 18px;border-radius:10px;box-shadow:var(--shadow);text-decoration:none;display:inline-block}
 .btn:hover{opacity:.9}
+
+/* Handelsregister-Styling */
+.register-block {
+  margin: 20px 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fafafa;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.register-block h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 6px;
+}
+
+.register-block p {
+  margin: 10px 0;
+}
+
+.register-block ul {
+  margin: 6px 0 6px 20px;
+}
